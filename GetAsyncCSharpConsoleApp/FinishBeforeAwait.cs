@@ -8,16 +8,26 @@ using System.Threading.Tasks;
 
 namespace GetAsyncCSharpConsoleApp
 {
+    /// <summary>
+    /// This is example class. The aim is to 
+    ///  - start background I/O tasks
+    ///  - do some job on main UI thread without affecting background tasks
+    ///  - show how background task may finish before awaiting the task
+    /// </summary>
     public class FinishBeforeAwait
     {
+        /// <summary>
+        /// This method calls 2 async methods with different execution times and waits until both is complete. 
+        /// </summary>
+        /// <returns></returns>
         public async Task AccessTheWebAsync()
         {
             var someUri = "http://google.com";
             //call async method 
-            Task fastDownloadTask = FastDownloadPage(someUri);
+            Task fastDownloadTask = FastDownloadPageAsync(someUri);
             
             //call async method
-            Task lazyDownloadTask = LazyDownloadPage(someUri);
+            Task lazyDownloadTask = LazyDownloadPageAsync(someUri);
 
             // Do some job on main thread
             // We expect fastDownloadTask will finish during DoIndependentWork() execution.
@@ -32,7 +42,12 @@ namespace GetAsyncCSharpConsoleApp
             Program.WriteToConsole("All tasks have finished.");
         }
 
-        public async Task LazyDownloadPage(string uri)
+        /// <summary>
+        /// Downloads the page content after 10 sec
+        /// </summary>
+        /// <param name="uri">uri of the web page</param>
+        /// <returns>task</returns>
+        public async Task LazyDownloadPageAsync(string uri)
         {
             HttpClient client = new HttpClient();
 
@@ -46,7 +61,12 @@ namespace GetAsyncCSharpConsoleApp
             
         }
 
-        public async Task FastDownloadPage(string uri)
+        /// <summary>
+        /// Immediatly starts the download
+        /// </summary>
+        /// <param name="uri">uri if the web page</param>
+        /// <returns>task</returns>
+        public async Task FastDownloadPageAsync(string uri)
         {
             HttpClient client = new HttpClient();
 
@@ -59,7 +79,9 @@ namespace GetAsyncCSharpConsoleApp
         }
 
 
-
+        /// <summary>
+        /// Does some job in main UI Thread.
+        /// </summary>
         public void DoIndependentWork()
         {
             Program.WriteToConsole("DoIndependentWork: I can do here something 7 sec.");
