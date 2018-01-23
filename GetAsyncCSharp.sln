@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetAsyncCSharpConsoleApp", "GetAsyncCSharpConsoleApp\GetAsyncCSharpConsoleApp.csproj", "{68BBC02B-2176-4867-A5EB-64FDE67A7C18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetAsyncCSharpWpfApp", "GetAsyncCSharpWpfApp\GetAsyncCSharpWpfApp.csproj", "{5D6CF314-71C5-4230-B3CF-76C59B6F5314}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{68BBC02B-2176-4867-A5EB-64FDE67A7C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68BBC02B-2176-4867-A5EB-64FDE67A7C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68BBC02B-2176-4867-A5EB-64FDE67A7C18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D6CF314-71C5-4230-B3CF-76C59B6F5314}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D6CF314-71C5-4230-B3CF-76C59B6F5314}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D6CF314-71C5-4230-B3CF-76C59B6F5314}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D6CF314-71C5-4230-B3CF-76C59B6F5314}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
